@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:botDetect="https://captcha.com/java/jsf">
+<h:head>
+	<ui:include src="/resources/template/login-head.xhtml"></ui:include>
+</h:head>
+<h:body>
+
+	
+
+	<h:form>
+
+		<div class="login-page">
+			<div class="form">
+				<img src="resources/img/logo-yaman.png" width="100%" alt="logo-yaman" /><span class="navbar-brand mb-0 h1"> </span>
+				<p:spacer width="100%" height="20px" />
+				
+				<h2>Login</h2>
+				<hr />
+				<div class="login-form">
+				
+					<p:messages id="messages" showDetail="true" closable="true">
+			            <p:autoUpdate/>
+			        </p:messages>					
+					
+					<p:outputLabel value="Email" for="username"/>
+					<p:inputText value="#{authenticationController.fieldUsername}" title="username" id="username"/>
+										
+					<p:outputLabel value="Senha" for="password"/>
+					<p:password value="#{authenticationController.fieldPassword}" title="password" id="password"/>
+					
+<!-- 					<p:panel> -->
+<!-- 						<h:outputLabel for="captchaCode" value="Retype the characters from the picture:"/> -->
+<!-- 						<botDetect:jsfCaptcha id="exampleCaptcha" userInputID="captchaCode" binding="#{authenticationController.captcha}"/>                       -->
+<!-- 						<h:inputText id="captchaCode" value="#{authenticationController.captchaCode}"/> -->
+<!-- 					</p:panel> -->
+
+					<p:spacer width="100%" height="20px" />
+					<p:commandButton value="Entrar" action="#{authenticationController.loginUser()}" styleClass=""/>
+					
+<!-- 					<div class="message"> -->
+<!-- 						<p> -->
+<!-- 						Não é registrado? <a href="register.jsf?faces-redirect=true">Cadastre-se</a> ou <a href="register.jsf?faces-redirect=true">Redefina seu acesso</a> -->
+<!-- 						</p> -->
+<!-- 					</div> -->
+					
+						
+					
+				</div>
+			</div>
+		</div>
+	</h:form>
+	
+	<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+
+
+	<ui:include src="/resources/template/footer_scripts.xhtml"></ui:include>
+</h:body>
+</html>

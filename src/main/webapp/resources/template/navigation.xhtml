@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	</h:head>
+	<h:body>
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />             
+		<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+		   	<div class="spinner-border" role="status">
+		    <span class="sr-only">Loading...</span>
+		</div>
+	</p:dialog>
+
+	<h:form id="form-nav">
+			<nav class="navbar" style="background-color: white !important;">
+				<div class="container">
+					<a href="index.jsf?faces-redirect=true" class="d-flex align-items-center mb-lg-0 text-white text-decoration-none">
+						<img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" width="32" class="d-inline-block align-top" alt="brand-img" /> 
+						<span class="navbar-brand mb-0 h1 text-dark"><p:spacer width="10px" /> Portal</span>
+					</a>
+					
+					<ul class="navbar-nav ml-auto">												
+						<li class="nav-item">
+							<h:commandButton value="Sair" action="#{authenticationController.logout()}" styleClass="btn btn-sml btn-outline-dark" />
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light text-white shadow-sm bg-white" style="background-color: #301E46 !important;">
+				<div class="container">
+					<ul class="navbar-nav mr-auto">
+						<li><a href="index.jsf?faces-redirect=true"				class="nav-link px-2 text-white bi bi-house"> Home</a></li>
+<!-- 					<li><a href="employees.jsf?faces-redirect=true"			class="nav-link px-2 text-white bi bi-people-fill"> Recursos</a></li> -->
+					</ul>
+					
+					<ul class="navbar-nav ml-auto">
+						
+					</ul>
+				</div>
+			</nav>
+					
+	</h:form>
+
+	</h:body>
+</ui:composition>
