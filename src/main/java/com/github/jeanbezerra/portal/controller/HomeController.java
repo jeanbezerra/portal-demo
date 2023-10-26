@@ -1,4 +1,4 @@
-package br.com.trendsoftware.portal.controller;
+package com.github.jeanbezerra.portal.controller;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
